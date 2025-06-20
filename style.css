@@ -1,0 +1,228 @@
+h1, h2, h3, h4, p, li {
+    font-family: monospace;
+    color: #331D60;
+}
+
+h1 {
+    font-size: 5em;
+    text-shadow: 0.07em 0.07em 0.04em #9999FF;
+    line-height: 50%;
+}
+
+h2 {
+    font-size: 4em;
+    text-shadow: 0.07em 0.07em 0.04em #9999FF;
+    line-height: 75%;
+}
+
+h3 {
+    font-size: 3em;
+    text-shadow: 0.07em 0.07em 0.04em #9999FF;
+    padding-bottom: -20px;
+}
+
+h4 {
+    font-size: 2em;
+    text-shadow: 0.07em 0.07em 0.04em #9999FF;
+    padding-bottom: -10px;
+}
+
+p, li {
+    font-size: larger;
+    max-width: 50em;
+}
+
+a {
+    color: #7A7AFF;
+    text-shadow: 2px 2px 3px #9999FF;
+}
+a:visited {
+    color: #86638F;
+    text-shadow: 1px 1px 1px #272780;
+}
+a:hover {
+    color: #6363FF;
+    text-shadow: 2px 2px 2px #9999FF;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li a, li a:visited {
+    display: block;
+    padding: 8px 0px;
+    text-decoration: none;
+    color: #7A7AFF;
+    text-shadow: 2px 2px 3px #9999FF;
+}
+
+li a:hover {
+    background-color: #9999FF;
+    color: white;
+    text-shadow: 1px 1px 1px #272780;
+}
+
+body {
+    background: #CCB3FF;
+    background: -moz-linear-gradient(-45deg, #CCB3FF 0%, #EEE5FF 27%, #CCB3FF 100%);
+    background: -webkit-linear-gradient(-45deg, #CCB3FF 0%, #EEE5FF 27%, #CCB3FF 100%);
+    background: linear-gradient(135deg, #CCB3FF 0%, #EEE5FF 27%, #CCB3FF 100%);
+    margin-left: 100px;
+    margin-right: 100px;
+    min-height: 100vh;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.center {
+    text-align: center;
+}
+
+/* Credit to https://www.w3schools.com/css/css_grid.asp for grid layout */
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "menu content";
+    grid-template-columns: 1fr 3fr;
+    gap: 5px;
+    padding: 5px;
+}
+.container > div {
+    padding: 10px;
+}
+.container > div.header {
+    grid-area: header;
+    text-align: center;
+    max-height: 15em;
+}
+.container > div.menu {
+    grid-area: menu;
+    min-width: 25em;
+}
+.container > div.content {
+    grid-area: content;
+    overflow: scroll;
+    max-height: 70vh;
+    min-width: 50em;
+    border: 2px solid;
+    border-color: #C1B6DF;
+    background-color: #EEE8FF;
+}
+
+.contact, .navigate {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 3px;
+    line-height: 75%;
+}
+
+/* Credit to https://www.amitmerchant.com/simple-blinking-cursor-animation-using-css/  for the blinking cursor */
+@keyframes cursor-blink {
+    0% {
+        opacity: 0;
+    }
+}
+
+.box h1::after {
+    content: "|";
+    display: inline-block;
+    animation: cursor-blink 1.5s steps(2) infinite;
+    text-shadow: none;
+}
+
+.image-container {
+    max-width: 50em;
+}
+
+.merit-image-container {
+    max-width: 50em;
+    text-align: center;
+}
+
+.merit-images {
+    padding: 10px;
+    display: inline-block;
+    box-shadow: 3px 3px 3px #9999FF;
+    border: 2px solid #E5DCFF;
+}
+
+/* Credit to https://www.w3schools.com/howto/howto_js_slideshow.asp for the slideshows */
+* {box-sizing: border-box}
+.mySlides1, .mySlides2, .mySlides3 {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 750px;
+  max-height: 425px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #331D60;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a background color */
+.prev:hover, .next:hover {
+  background-color: #665688;
+  color: white;
+}
+
+/* Credit to https://gist.github.com/Dakedres/0ccda599648833a1c2f65d3967aa131b for scroll bar */
+body *::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+  background: none;
+}
+
+body *::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-button {
+  width: 16px;
+  height: 16px;
+  background: #DCD0FF;
+  box-shadow: inset 1px 1px #C1B6DF, inset -1px -1px #A59CBF;
+  border: 1px solid;
+  border-color: #E5DCFF #E0D6FF #E0D6FF #E5DCFF;
+}
+
+body *::-webkit-scrollbar-track {
+  background-color: #EFE8FF;
+  background-position: 0 0;
+  background-size: 2px;
+}
+
+body *::-webkit-scrollbar-button {
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
+
+body *::-webkit-scrollbar-corner {
+  background: #EFE8FF;
+}
+
+/* dakedres was here ;3 */
